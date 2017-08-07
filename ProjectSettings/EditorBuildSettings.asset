@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2c6070e89b62ab84bbcd62a7f56833d4
+  - enabled: 1
+    path: Assets/Scenes/PirateCove.unity
+    guid: 6c59ea049be91c844b1e3cb78153570e
