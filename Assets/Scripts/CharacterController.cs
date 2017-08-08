@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour {
 
     Rigidbody2D rb;
-    public float speed = 3;
+    public float speed = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,5 +16,10 @@ public class CharacterController : MonoBehaviour {
         float moveX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+
+		if (Input.GetButtonDown("Jump")) {
+			rb.AddForce(Vector3.up * 5.0f);
+			rb.gravityScale *= -1;
+		}
     }
 }
