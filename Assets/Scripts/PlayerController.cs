@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     Rigidbody2D rb;
     public float speed = 3.0f;
+	public float jumpHeight = 2.0f;
 
-	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -15,11 +15,12 @@ public class CharacterController : MonoBehaviour {
     void FixedUpdate() {
         float moveX = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+		rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
 
 		if (Input.GetButtonDown("Jump")) {
-			rb.AddForce(Vector3.up * 5.0f);
-			rb.gravityScale *= -1;
+			rb.velocity = Vector2.up * jumpHeight;
 		}
+
+		
     }
 }
