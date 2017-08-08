@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Buoyancy : MonoBehaviour {
 
-	Rigidbody2D rb;
-	public float buoyancyFactor = 0.9f;
+	public float buoyancy = 20;
+	public float viscosity = 0.9f;
 
+	Rigidbody2D rb;
 	bool isWater;
 
 	void Start() {
@@ -16,9 +17,9 @@ public class Buoyancy : MonoBehaviour {
 	void FixedUpdate() {
 		// Check if GameObject is under water
 		if (isWater) {
-			rb.AddForce(new Vector2(0, rb.gravityScale * 10 * buoyancyFactor));
+			rb.AddForce(Vector2.up * buoyancy);
+			rb.AddForce(rb.velocity * -1 * viscosity);
 		}
-		Debug.Log(rb.gravityScale);
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
@@ -28,7 +29,7 @@ public class Buoyancy : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.tag == "Water") {
+		if (col.gameObject.name == "Water") {
 			isWater = false;
 		}
 	}
