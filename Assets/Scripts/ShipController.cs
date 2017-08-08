@@ -36,13 +36,6 @@ public class ShipController : MonoBehaviour {
 		}
 
 		if (isControlled) {
-			// Prevent player from moving in local space
-			Vector3 localVelocity = transform.InverseTransformDirection(controller.GetComponent<Rigidbody2D>().velocity);
-			localVelocity.x = 0;
-			localVelocity.z = 0;
-
-			controller.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(localVelocity);
-
 			float move = Input.GetAxis("Horizontal");
 
 			// Horizontal movement
