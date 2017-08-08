@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour {
 			rb.velocity = Vector2.up * jumpHeight;
 		}
 
+		if (rb.position.y < -100) {
+			rb.position = GameObject.Find("Spawnpoint").transform.position;
+		}
     }
 
 	bool IsGrounded() {

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour {
 
 	public float speed = 3.0f;
+	public GameObject[] shipUIElements;
 
 	Rigidbody2D rb;
 	bool isControlled;
@@ -15,22 +17,32 @@ public class ShipController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		GameObject controller = GameObject.Find("Character");
+		GameObject ply = GameObject.FindGameObjectWithTag("Player");
 
 		if (Input.GetKeyDown(KeyCode.E) &&
-			controller.transform.parent == transform) {
+			ply.transform.parent == transform) {
 
 			if (isControlled) {
-				// Unlock player movement
-				controller.GetComponent<PlayerController>().enabled = true;
-
-
 				isControlled = false;
-			} else {
-				// Lock player movement
-				controller.GetComponent<PlayerController>().enabled = false;
 
+				// Unlock player movement
+				ply.GetComponent<PlayerController>().enabled = true;
+
+				// Hide ship HUD
+				foreach (GameObject obj in shipUIElements) {
+					obj.SetActive(false);
+				}
+			} else {
 				isControlled = true;
+
+				// Lock player movement
+				ply.GetComponent<PlayerController>().enabled = false;
+
+				// Show ship HUD
+				foreach (GameObject obj in shipUIElements) {
+					obj.SetActive(true);
+				}
+				GameObject.Find("Ship Name").GetComponent<Text>().text = transform.name;
 			}
 			
 		}
