@@ -18,8 +18,10 @@ public class PlayerController : MonoBehaviour {
 		// TODO: use rigidbody force vectors
 
 		// Horizontal movement
-		if (rb.velocity.x < speed) { // this check prevents input when reached max speed (bad)
+		if (rb.velocity.x < speed) {
 			rb.velocity = new Vector2(move * speed, rb.velocity.y);
+		} else {
+			rb.velocity = new Vector2(speed, rb.velocity.y);
 		}
 
 		// Jumping
@@ -38,5 +40,17 @@ public class PlayerController : MonoBehaviour {
 		RaycastHit2D hit = Physics2D.Raycast(origin, dir, rayDist);
 
 		return hit;
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.transform.tag == "Ship") {
+			transform.parent = col.transform;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D col) {
+		if (col.transform.tag == "Ship") {
+			transform.parent = null;
+		}
 	}
 }

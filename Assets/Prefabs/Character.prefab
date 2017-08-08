@@ -183,8 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a9bf48d0b09b4787518801fd22735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buoyancy: 15
-  viscosity: 0.9
 --- !u!114 &114233870826389006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 10c88039a5351d245a0ff9671de4e0a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 778bf93e7d6b41a4bb5e6805c3f41266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

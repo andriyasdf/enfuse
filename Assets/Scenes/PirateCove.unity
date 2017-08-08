@@ -674,11 +674,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114816256472396904, guid: 4f517fae1d32cf64cad71f528ad2ac9a,
-        type: 2}
-      propertyPath: buoyancy
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f517fae1d32cf64cad71f528ad2ac9a, type: 2}
   m_IsPrefabParent: 0

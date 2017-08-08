@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 50051875646778964}
   - component: {fileID: 114816256472396904}
   - component: {fileID: 60273971747526124}
+  - component: {fileID: 114664517418430464}
   m_Layer: 0
   m_Name: Briggnet
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704018913674056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.47, y: 3.83, z: 0}
+  m_LocalPosition: {x: 16.17, y: 3.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,13 +54,13 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 38.97146
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -87,35 +88,45 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 7.5237226, y: 0.7649641}
-      - {x: 5.3361673, y: 0.72724104}
-      - {x: 5.0169363, y: 0.46956587}
-      - {x: 5.0232096, y: -0.28241634}
-      - {x: 4.4256563, y: -0.29780674}
-      - {x: 4.421153, y: -0.9503038}
-      - {x: -7.1331882, y: -0.8733244}
-      - {x: -7.13132, y: -1.1106474}
-      - {x: -6.999589, y: -1.2472343}
-      - {x: -6.7507067, y: -1.3633275}
-      - {x: -6.4865284, y: -1.6172137}
-      - {x: -5.9931335, y: -1.8448789}
-      - {x: -4.272052, y: -2.734264}
-      - {x: -3.7276745, y: -3.1137762}
-      - {x: -2.9553604, y: -3.3625047}
-      - {x: -1.250576, y: -3.6143885}
-      - {x: 5.5209723, y: -3.626679}
-      - {x: 6.11292, y: -3.4833918}
-      - {x: 6.6125517, y: -3.3619924}
-      - {x: 7.0055094, y: -3.2453594}
-      - {x: 7.2511263, y: -3.1220615}
-      - {x: 7.388852, y: -2.5935273}
-      - {x: 7.5119696, y: -1.4011526}
-    - - {x: 2.5952024, y: -2.8465815}
-      - {x: 3.4290361, y: -1.6815872}
-      - {x: 4.9453173, y: -2.1182551}
-    - - {x: -0.50710773, y: -2.777412}
-      - {x: 0.35915565, y: -1.6963139}
-      - {x: -2.895877, y: -1.749578}
+    - - {x: 6.375329, y: -1.7468445}
+      - {x: 6.6238756, y: -1.6224251}
+      - {x: 6.7504053, y: -1.5002589}
+      - {x: 6.749526, y: -1.251137}
+      - {x: -4.7508154, y: -1.2570688}
+      - {x: -4.7499266, y: -0.6253729}
+      - {x: -4.875554, y: -0.50059223}
+      - {x: -5.250471, y: -0.37543464}
+      - {x: -5.375386, y: 0.2490344}
+      - {x: -5.6249266, y: 0.37471008}
+      - {x: -7.871731, y: 0.37657356}
+      - {x: -7.998042, y: -0.50253844}
+      - {x: -7.9978895, y: -1.3752143}
+      - {x: -7.8858566, y: -1.7504337}
+      - {x: -7.7495794, y: -2.9968698}
+      - {x: -7.6228104, y: -3.4995708}
+      - {x: -7.508937, y: -3.6202888}
+      - {x: -5.874243, y: -3.9985952}
+      - {x: 1.0033026, y: -3.9996166}
+      - {x: 1.9937983, y: -3.87494}
+      - {x: 3.130517, y: -3.6276283}
+      - {x: 3.8918219, y: -3.2444077}
+      - {x: 4.2505484, y: -2.9991546}
+      - {x: 4.997731, y: -2.6292496}
+      - {x: 5.249091, y: -2.5030437}
+      - {x: 5.3704786, y: -2.369585}
+      - {x: 6.126607, y: -1.997646}
+--- !u!114 &114664517418430464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704018913674056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb71443747eae90479b1501f2fe002a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!114 &114816256472396904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,8 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a9bf48d0b09b4787518801fd22735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buoyancy: 20
-  viscosity: 0.9
 --- !u!212 &212845627147547460
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -161,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b2bb9b9da5dc8a84bac8715438cd4c64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de27074face489a4e9fac45027a8cf83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
