@@ -19,7 +19,6 @@ public class InGameMenu : MonoBehaviour {
 
 	public void PauseGame() {
 		Time.timeScale = 0;
-		Debug.Log("Pause!");
 
 		// Enable pause menu
 		pauseMenu.SetActive(true);
