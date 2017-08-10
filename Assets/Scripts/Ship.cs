@@ -16,7 +16,7 @@ public class Ship : MonoBehaviour {
 	void Update() {
 	}
 
-	void HullDamage(int amount) {
+	void TakeDamage(int amount) {
 		hull -= amount;
 
 		if (GetComponent<ShipController>().isControlled) {
@@ -31,7 +31,7 @@ public class Ship : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.transform.tag == "Ground") {
-			HullDamage(Mathf.FloorToInt(Random.Range(10, 22)));
+			TakeDamage(Mathf.FloorToInt(Random.Range(10, 22)));
 		}
 	}
 }

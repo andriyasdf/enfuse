@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0e5cf95347e482b47999c4294c210968
-timeCreated: 1502149104
+timeCreated: 1502380053
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -51,7 +51,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -85,9 +85,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 120
-        height: 120
+        y: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -98,10 +98,10 @@ TextureImporter:
       name: Bit_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 240
-        width: 120
-        height: 120
+        x: 8
+        y: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,9 +113,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 120
-        height: 120
+        y: 8
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: Bit_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 120
-        width: 120
-        height: 120
+        x: 8
+        y: 8
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 120
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: Bit_5
       rect:
         serializedVersion: 2
-        x: 120
+        x: 8
         y: 0
-        width: 120
-        height: 120
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 50511460408579564}
   - component: {fileID: 114642298013833852}
   - component: {fileID: 60258844014085538}
-  - component: {fileID: 114730290704299240}
   - component: {fileID: 114444442641406970}
+  - component: {fileID: 114730290704299240}
   m_Layer: 0
   m_Name: Briggnet
   m_TagString: Ship
@@ -153,10 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   isControlled: 0
+  controller: {fileID: 0}
   shipUIElements:
   - {fileID: 0}
   - {fileID: 0}
-  ply: {fileID: 0}
 --- !u!212 &212682778187530564
 SpriteRenderer:
   m_ObjectHideFlags: 1

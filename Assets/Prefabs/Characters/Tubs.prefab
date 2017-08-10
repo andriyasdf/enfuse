@@ -21,10 +21,12 @@ GameObject:
   - component: {fileID: 4467829443584354}
   - component: {fileID: 212207022092408020}
   - component: {fileID: 50465536596749106}
+  - component: {fileID: 61275763069382916}
+  - component: {fileID: 114370362876826740}
   - component: {fileID: 114814123993921040}
   - component: {fileID: 114429254883823748}
-  - component: {fileID: 61275763069382916}
-  m_Layer: 0
+  - component: {fileID: 114736956589076034}
+  m_Layer: 9
   m_Name: Tubs
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -202,6 +204,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974500096561722}
   m_Enabled: 1
+--- !u!114 &114370362876826740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461042836198588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c04a4f9fc2e95748b24d4621158e876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 125
+  bits: 0
 --- !u!114 &114429254883823748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +229,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inWater: 0
+--- !u!114 &114736956589076034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461042836198588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 37
+    i1: 85
+    i2: 187
+    i3: 207
+    i4: 61
+    i5: 2
+    i6: 153
+    i7: 244
+    i8: 185
+    i9: 241
+    i10: 208
+    i11: 159
+    i12: 183
+    i13: 161
+    i14: 27
+    i15: 72
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114814123993921040
 MonoBehaviour:
   m_ObjectHideFlags: 1

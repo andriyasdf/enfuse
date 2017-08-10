@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class ShipController : NetworkBehaviour {
 
 	public float speed = 3.0f;
+	[SyncVar]
 	public bool isControlled;
 
+	public GameObject controller;
 	public GameObject[] shipUIElements;
-	public GameObject ply;
 
 
 	Rigidbody2D rb;
@@ -21,13 +22,13 @@ public class ShipController : NetworkBehaviour {
 	}
 
 	void FixedUpdate() {
-		ply = GameObject.FindGameObjectWithTag("Player");
+		controller = GameObject.FindGameObjectWithTag("Player");
 
 		if (Input.GetKeyDown(KeyCode.E)) {
 			if (isControlled) {
 				ReleaseControl();
-			} else if (ply.transform.parent == transform) {
-				TakeControl(ply);
+			} else if (controller.transform.parent == transform) {
+				TakeControl(controller);
 			}
 		}
 
@@ -48,7 +49,7 @@ public class ShipController : NetworkBehaviour {
 	public void TakeControl(GameObject ply) {
 		isControlled = true;
 
-		// Hide HUD
+		// Show HUD
 		foreach (GameObject obj in shipUIElements) {
 			obj.SetActive(true);
 		}
@@ -68,7 +69,7 @@ public class ShipController : NetworkBehaviour {
 		}
 
 		// Unlock player movement
-		ply.GetComponent<PlayerController>().enabled = true;
+		controller.GetComponent<PlayerController>().enabled = true;
 	}
 
 	void OnDestroy() {
