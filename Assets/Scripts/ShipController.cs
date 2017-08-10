@@ -7,6 +7,7 @@ public class ShipController : MonoBehaviour {
 
 	public float speed = 3.0f;
 	public GameObject[] shipUIElements;
+	public GameObject ply;
 
 	Rigidbody2D rb;
 	bool isControlled;
@@ -17,34 +18,14 @@ public class ShipController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		GameObject ply = GameObject.FindGameObjectWithTag("Player");
+		ply = GameObject.FindGameObjectWithTag("Player");
 
-		if (Input.GetKeyDown(KeyCode.E) &&
-			ply.transform.parent == transform) {
-
+		if (Input.GetKeyDown(KeyCode.E)) {
 			if (isControlled) {
-				isControlled = false;
-
-				// Unlock player movement
-				ply.GetComponent<PlayerController>().enabled = true;
-
-				// Hide ship HUD
-				foreach (GameObject obj in shipUIElements) {
-					obj.SetActive(false);
-				}
-			} else {
-				isControlled = true;
-
-				// Lock player movement
-				ply.GetComponent<PlayerController>().enabled = false;
-
-				// Show ship HUD
-				foreach (GameObject obj in shipUIElements) {
-					obj.SetActive(true);
-				}
-				GameObject.Find("Ship Name").GetComponent<Text>().text = transform.name;
+				ReleaseControl();
+			} else if (ply.transform.parent == transform) {
+				TakeControl(ply);
 			}
-			
 		}
 
 		if (isControlled) {
@@ -59,5 +40,35 @@ public class ShipController : MonoBehaviour {
 				}
 			}
 		}	
+	}
+
+	public void TakeControl(GameObject ply) {
+		isControlled = true;
+
+		// Hide HUD
+		foreach (GameObject obj in shipUIElements) {
+			obj.SetActive(true);
+		}
+		GameObject.Find("Ship Health").GetComponent<Text>().text = GetComponent<Ship>().hull.ToString();
+		GameObject.Find("Ship Name").GetComponent<Text>().text = transform.name;
+
+		// Lock player movement
+		ply.GetComponent<PlayerController>().enabled = false;
+	}
+
+	public void ReleaseControl() {
+		isControlled = false;
+
+		// Hide HUD
+		foreach (GameObject obj in shipUIElements) {
+			obj.SetActive(false);
+		}
+
+		// Unlock player movement
+		ply.GetComponent<PlayerController>().enabled = true;
+	}
+
+	void OnDestroy() {
+		ReleaseControl();
 	}
 }
