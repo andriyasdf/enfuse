@@ -14,7 +14,7 @@ public class PlayerController : NetworkBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
 		if (isLocalPlayer) {
-
+			transform.GetChild(0).gameObject.SetActive(true);
 		}
 	}
 
