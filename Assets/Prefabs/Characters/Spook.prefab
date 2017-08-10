@@ -60,6 +60,8 @@ GameObject:
   - component: {fileID: 114150602054813598}
   - component: {fileID: 61016016703804778}
   - component: {fileID: 61003611140178330}
+  - component: {fileID: 114680138644094816}
+  - component: {fileID: 114197642746140558}
   m_Layer: 0
   m_Name: Spook
   m_TagString: Player
@@ -253,6 +255,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpHeight: 5
+--- !u!114 &114197642746140558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874476089897730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114680138644094816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874476089897730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 254
+    i1: 208
+    i2: 225
+    i3: 137
+    i4: 129
+    i5: 12
+    i6: 55
+    i7: 196
+    i8: 25
+    i9: 197
+    i10: 156
+    i11: 198
+    i12: 45
+    i13: 142
+    i14: 243
+    i15: 122
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!124 &124338280501310586
 Behaviour:
   m_ObjectHideFlags: 1

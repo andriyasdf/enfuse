@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67596629d32e1c2499f04928852d64e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hull: 3000
+  hull: 30
 --- !u!114 &114642298013833852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  isControlled: 0
   shipUIElements:
   - {fileID: 0}
   - {fileID: 0}

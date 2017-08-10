@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
 
     public float speed = 3.0f;
 	public float jumpHeight = 2.0f;
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
     void FixedUpdate() {
+		if (!isLocalPlayer) return;
+
         float move = Input.GetAxis("Horizontal");
 		// TODO: use rigidbody force vectors
 

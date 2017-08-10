@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class ShipController : MonoBehaviour {
+public class ShipController : NetworkBehaviour {
 
 	public float speed = 3.0f;
 	public bool isControlled;

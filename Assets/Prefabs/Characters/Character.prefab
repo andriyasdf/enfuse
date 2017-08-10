@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 61211102656746912}
   - component: {fileID: 114233870826389006}
   - component: {fileID: 114013982004313080}
+  - component: {fileID: 114794746821017724}
+  - component: {fileID: 114564513235926988}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -227,6 +229,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpHeight: 5
+--- !u!114 &114564513235926988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1459230840308690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114794746821017724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1459230840308690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 71
+    i1: 158
+    i2: 173
+    i3: 234
+    i4: 130
+    i5: 0
+    i6: 197
+    i7: 68
+    i8: 184
+    i9: 243
+    i10: 24
+    i11: 150
+    i12: 130
+    i13: 133
+    i14: 62
+    i15: 114
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!124 &124332840450885244
 Behaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +329,7 @@ SpriteRenderer:
   m_Size: {x: 64, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212799992935208284
 SpriteRenderer:
