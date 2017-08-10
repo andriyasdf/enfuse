@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Ship : MonoBehaviour {
 
-	public int hull = 3000;
+	public int hull = 1000;
 
 	// Use this for initialization
 	void Start() {
@@ -18,7 +18,10 @@ public class Ship : MonoBehaviour {
 
 	void HullDamage(int amount) {
 		hull -= amount;
-		GameObject.Find("Ship Health").GetComponent<Text>().text = hull.ToString();
+
+		if (GetComponent<ShipController>().isControlled) {
+			GameObject.Find("Ship Health").GetComponent<Text>().text = hull.ToString();
+		}
 
 		if (hull <= 0) {
 			// Ship is dead

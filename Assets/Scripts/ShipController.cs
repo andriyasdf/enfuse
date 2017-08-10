@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class ShipController : MonoBehaviour {
 
 	public float speed = 3.0f;
+	public bool isControlled;
+
 	public GameObject[] shipUIElements;
 	public GameObject ply;
 
+
 	Rigidbody2D rb;
-	bool isControlled;
 
 	// Use this for initialization
 	void Start () {
