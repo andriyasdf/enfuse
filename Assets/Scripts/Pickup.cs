@@ -39,9 +39,7 @@ public class Pickup : MonoBehaviour {
 		}
 	}
 
-	void PickupItem(GameObject ply) {
-		ply.GetComponent<Player>().AddBits(10);
-
+	public virtual void PickupItem(GameObject ply) {
 		Destroy(gameObject);
 	}
 }
