@@ -12,6 +12,10 @@ public class PlayerController : NetworkBehaviour {
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+
+		if (isLocalPlayer) {
+
+		}
 	}
 
     void FixedUpdate() {
@@ -30,6 +34,14 @@ public class PlayerController : NetworkBehaviour {
 		// Jumping
 		if (Input.GetButtonDown("Jump") && IsGrounded()) {
 			rb.velocity = Vector2.up * jumpHeight;
+		}
+
+		// Model flipping
+		// TODO: Make more softcoded
+		if (Input.GetKeyDown(KeyCode.A)) {
+			GetComponent<SpriteRenderer>().flipX = true;
+		} else if (Input.GetKeyDown(KeyCode.D)) {
+			GetComponent<SpriteRenderer>().flipX = false;
 		}
 
 		if (rb.position.y < -100) {

@@ -1945,7 +1945,7 @@ MonoBehaviour:
     i14: 172
     i15: 154
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &1610394528
 Prefab:
   m_ObjectHideFlags: 0
@@ -2094,11 +2094,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4957358289099048, guid: 4f517fae1d32cf64cad71f528ad2ac9a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4957358289099048, guid: 4f517fae1d32cf64cad71f528ad2ac9a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.18
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4957358289099048, guid: 4f517fae1d32cf64cad71f528ad2ac9a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2134,6 +2134,11 @@ Prefab:
       propertyPath: shipUIElements.Array.data[1]
       value: 
       objectReference: {fileID: 480461212}
+    - target: {fileID: 212682778187530564, guid: 4f517fae1d32cf64cad71f528ad2ac9a,
+        type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f517fae1d32cf64cad71f528ad2ac9a, type: 2}
   m_IsPrefabParent: 0
