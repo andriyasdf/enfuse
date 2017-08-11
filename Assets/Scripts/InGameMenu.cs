@@ -18,16 +18,10 @@ public class InGameMenu : MonoBehaviour {
 	}
 
 	public void PauseGame() {
-		Time.timeScale = 0;
-
-		// Enable pause menu
 		pauseMenu.SetActive(true);
 	}
 
 	public void ResumeGame() {
-		Time.timeScale = 1.0f;
-
-		// Disable pause menu
 		pauseMenu.SetActive(false);
 	}
 
