@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 60258844014085538}
   - component: {fileID: 114444442641406970}
   - component: {fileID: 114730290704299240}
-  - component: {fileID: 114012664575095088}
   - component: {fileID: 114721390687147332}
+  - component: {fileID: 114012664575095088}
   m_Layer: 0
   m_Name: Briggnet
   m_TagString: Ship
@@ -66,7 +66,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!60 &60258844014085538
 PolygonCollider2D:
   m_ObjectHideFlags: 1
