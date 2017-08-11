@@ -7,15 +7,6 @@ public class Ship : MonoBehaviour {
 
 	public int hull = 1000;
 
-	// Use this for initialization
-	void Start() {
-		
-	}
-	
-	// Update is called once per frame
-	void Update() {
-	}
-
 	void TakeDamage(int amount) {
 		hull -= amount;
 

@@ -22,7 +22,18 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer) return;
 
 		if (Input.GetKeyDown(KeyCode.Backspace)) {
-			GetComponent<Player>().TakeDamage(10);
+				GetComponent<Player>().TakeDamage(10);
+		}
+
+		if (Input.GetButtonDown("Jump") && IsGrounded()) {
+			rb.velocity = Vector2.up * jumpHeight;
+		}
+
+		// Model flipping
+		if (Input.GetKeyDown(KeyCode.A)) {
+			GetComponent<SpriteRenderer>().flipX = true;
+		} else if (Input.GetKeyDown(KeyCode.D)) {
+			GetComponent<SpriteRenderer>().flipX = false;
 		}
 	}
 
@@ -31,27 +42,10 @@ public class PlayerController : NetworkBehaviour {
 
         float move = Input.GetAxis("Horizontal");
 
-		// Horizontal movement
-		/*if (Mathf.Abs(rb.velocity.x) < speed) {
-			rb.AddForce(Vector2.right * move * speed * 10);
-		}*/
-		
 		if (rb.velocity.x < speed) {
 			rb.velocity = new Vector2(move * speed, rb.velocity.y);
 		} else {
 			rb.velocity = new Vector2(speed, rb.velocity.y);
-		}
-
-		if (Input.GetButtonDown("Jump") && IsGrounded()) {
-			rb.velocity = Vector2.up * jumpHeight;
-		}
-
-		// Model flipping
-		// TODO: Make more softcoded
-		if (Input.GetKeyDown(KeyCode.A)) {
-			GetComponent<SpriteRenderer>().flipX = true;
-		} else if (Input.GetKeyDown(KeyCode.D)) {
-			GetComponent<SpriteRenderer>().flipX = false;
 		}
 
 		if (rb.position.y < -100) {

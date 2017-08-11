@@ -18,7 +18,6 @@ public class Player : NetworkBehaviour {
 	GameObject healthCount;
 	GameObject bitsCount;
 
-	// Use this for initialization
 	void Start() {
 		healthCount = GameObject.Find("Player Health");
 		bitsCount = GameObject.Find("Player Bits");
@@ -26,11 +25,6 @@ public class Player : NetworkBehaviour {
 		// Set initial UI values
 		OnHealthUpdate(health);
 		OnBitsUpdate(bits);
-	}
-	
-	// Update is called once per frame
-	void Update() {
-		
 	}
 
 	public void TakeDamage(int amount) {
