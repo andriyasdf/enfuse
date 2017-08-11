@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114814123993921040}
   - component: {fileID: 114429254883823748}
   - component: {fileID: 114736956589076034}
+  - component: {fileID: 114217805179862062}
   m_Layer: 9
   m_Name: Tubs
   m_TagString: Player
@@ -204,6 +205,27 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974500096561722}
   m_Enabled: 1
+--- !u!114 &114217805179862062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461042836198588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114370362876826740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a9bf48d0b09b4787518801fd22735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inWater: 0
 --- !u!114 &114736956589076034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,7 +281,7 @@ MonoBehaviour:
     i14: 27
     i15: 72
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114814123993921040
 MonoBehaviour:
   m_ObjectHideFlags: 1
