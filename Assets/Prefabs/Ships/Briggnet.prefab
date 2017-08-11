@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 60258844014085538}
   - component: {fileID: 114444442641406970}
   - component: {fileID: 114730290704299240}
+  - component: {fileID: 114012664575095088}
+  - component: {fileID: 114721390687147332}
   m_Layer: 0
   m_Name: Briggnet
   m_TagString: Ship
@@ -38,8 +40,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753869771855654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.17, y: 3.18, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,9 +91,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.375329, y: -1.7468445}
-      - {x: 6.6238756, y: -1.6224251}
-      - {x: 6.7504053, y: -1.5002589}
+    - - {x: 6.7504053, y: -1.5002589}
       - {x: 6.749526, y: -1.251137}
       - {x: -4.7508154, y: -1.2570688}
       - {x: -4.7499266, y: -0.6253729}
@@ -102,20 +102,33 @@ PolygonCollider2D:
       - {x: -7.871731, y: 0.37657356}
       - {x: -7.998042, y: -0.50253844}
       - {x: -7.9978895, y: -1.3752143}
-      - {x: -7.8858566, y: -1.7504337}
       - {x: -7.7495794, y: -2.9968698}
-      - {x: -7.6228104, y: -3.4995708}
-      - {x: -7.508937, y: -3.6202888}
+      - {x: -7.577056, y: -3.5453248}
       - {x: -5.874243, y: -3.9985952}
       - {x: 1.0033026, y: -3.9996166}
       - {x: 1.9937983, y: -3.87494}
       - {x: 3.130517, y: -3.6276283}
-      - {x: 3.8918219, y: -3.2444077}
-      - {x: 4.2505484, y: -2.9991546}
-      - {x: 4.997731, y: -2.6292496}
-      - {x: 5.249091, y: -2.5030437}
-      - {x: 5.3704786, y: -2.369585}
-      - {x: 6.126607, y: -1.997646}
+--- !u!114 &114012664575095088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753869771855654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114444442641406970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67596629d32e1c2499f04928852d64e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hull: 30
+  hull: 300
 --- !u!114 &114642298013833852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +152,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a9bf48d0b09b4787518801fd22735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inWater: 0
+--- !u!114 &114721390687147332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753869771855654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 79
+    i1: 81
+    i2: 127
+    i3: 174
+    i4: 29
+    i5: 50
+    i6: 207
+    i7: 100
+    i8: 202
+    i9: 215
+    i10: 31
+    i11: 82
+    i12: 138
+    i13: 210
+    i14: 172
+    i15: 154
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114730290704299240
 MonoBehaviour:
   m_ObjectHideFlags: 1

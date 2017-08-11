@@ -22,6 +22,10 @@ public class Player : NetworkBehaviour {
 	void Start() {
 		healthCount = GameObject.Find("Player Health");
 		bitsCount = GameObject.Find("Player Bits");
+
+		// Set initial UI values
+		OnHealthUpdate(health);
+		OnBitsUpdate(bits);
 	}
 	
 	// Update is called once per frame

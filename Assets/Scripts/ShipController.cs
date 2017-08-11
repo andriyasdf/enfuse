@@ -13,7 +13,6 @@ public class ShipController : NetworkBehaviour {
 	public GameObject controller;
 	public GameObject[] shipUIElements;
 
-
 	Rigidbody2D rb;
 
 	// Use this for initialization
@@ -58,6 +57,7 @@ public class ShipController : NetworkBehaviour {
 
 		// Lock player movement
 		ply.GetComponent<PlayerController>().enabled = false;
+		//ply.GetComponent<Rigidbody2D>().isKinematic = true;
 	}
 
 	public void ReleaseControl() {
@@ -70,6 +70,8 @@ public class ShipController : NetworkBehaviour {
 
 		// Unlock player movement
 		controller.GetComponent<PlayerController>().enabled = true;
+		//controller.GetComponent<Rigidbody2D>().isKinematic = false;
+
 	}
 
 	void OnDestroy() {

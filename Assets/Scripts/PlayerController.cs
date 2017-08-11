@@ -1,20 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
 
     public float speed = 3.0f;
 	public float jumpHeight = 2.0f;
+	public LayerMask groundLayer;
 
 	Rigidbody2D rb;
 
-	void Start () {
+	void Start() {
         rb = GetComponent<Rigidbody2D>();
 
 		if (isLocalPlayer) {
 			transform.GetChild(0).gameObject.SetActive(true);
+			GameObject.Find("Lobby Camera").SetActive(false);
+		}
+	}
+
+	void Update() {
+		if (!isLocalPlayer) return;
+
+		if (Input.GetKeyDown(KeyCode.Backspace)) {
+			GetComponent<Player>().TakeDamage(10);
 		}
 	}
 
@@ -22,16 +30,18 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer) return;
 
         float move = Input.GetAxis("Horizontal");
-		// TODO: use rigidbody force vectors
 
 		// Horizontal movement
+		/*if (Mathf.Abs(rb.velocity.x) < speed) {
+			rb.AddForce(Vector2.right * move * speed * 10);
+		}*/
+		
 		if (rb.velocity.x < speed) {
 			rb.velocity = new Vector2(move * speed, rb.velocity.y);
 		} else {
 			rb.velocity = new Vector2(speed, rb.velocity.y);
 		}
 
-		// Jumping
 		if (Input.GetButtonDown("Jump") && IsGrounded()) {
 			rb.velocity = Vector2.up * jumpHeight;
 		}
@@ -50,14 +60,9 @@ public class PlayerController : NetworkBehaviour {
     }
 
 	bool IsGrounded() {
-		float rayDist = 1.0f;
-		Vector2 origin = rb.position;
-		Vector2 dir = Vector2.down;
+		Collider2D col = GetComponent<BoxCollider2D>();
 
-		// Cast a ray to check if the player is on ground
-		RaycastHit2D hit = Physics2D.Raycast(origin, dir, rayDist);
-
-		return hit;
+		return Physics2D.OverlapArea(col.bounds.min, col.bounds.max, groundLayer);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
