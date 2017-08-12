@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114721390687147332}
   - component: {fileID: 114012664575095088}
   m_Layer: 0
-  m_Name: Briggnet
+  m_Name: Sheferaw
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
