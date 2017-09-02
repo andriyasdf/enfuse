@@ -27,17 +27,6 @@ public class Player : NetworkBehaviour {
 		OnBitsUpdate(bits);
 	}
 
-	public void TakeDamage(int amount) {
-		if (!isServer) return;
-
-		health -= amount;
-
-		if (health <= 0) {
-			health = 0;
-			Destroy(gameObject);
-		}
-	}
-
 	public void AddBits(int amount) {
 		bits += amount;
 	}
@@ -48,5 +37,25 @@ public class Player : NetworkBehaviour {
 
 	void OnBitsUpdate(int bits) {
 		bitsCount.GetComponent<Text>().text = bits.ToString();
+	}
+
+	public void TakeDamage(int amount) {
+		if (!isServer) return;
+
+		health -= amount;
+
+		if (health <= 0) {
+			Respawn();
+		}
+	}
+
+	[ClientRpc]
+	void Respawn() {
+		if (!isLocalPlayer) return;
+
+		// Reset health
+		health = maxHealth;
+
+		transform.position = Vector3.zero;
 	}
 }
