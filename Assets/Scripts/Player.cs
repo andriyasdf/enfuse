@@ -27,10 +27,6 @@ public class Player : NetworkBehaviour {
 		OnBitsUpdate(bits);
 	}
 
-	public void AddBits(int amount) {
-		bits += amount;
-	}
-
 	void OnHealthUpdate(int health) {
 		healthCount.GetComponent<Text>().text = health.ToString();
 	}
@@ -39,10 +35,25 @@ public class Player : NetworkBehaviour {
 		bitsCount.GetComponent<Text>().text = bits.ToString();
 	}
 
+	public void AddBits(int amount) {
+		bits += amount;
+	}
+
 	public void TakeDamage(int amount) {
 		if (!isServer) return;
 
 		health -= amount;
+
+		if (health <= 0) {
+			Respawn();
+		}
+	}
+
+	public void SetHealth(int amount) {
+		if (!isServer)
+			return;
+
+		health = amount;
 
 		if (health <= 0) {
 			Respawn();

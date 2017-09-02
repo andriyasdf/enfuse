@@ -5,7 +5,8 @@ public class PlayerController : NetworkBehaviour {
 
     public float speed = 3.0f;
 	public float jumpHeight = 2.0f;
-	public LayerMask groundLayer;
+
+	bool isGrounded = false;
 
 	Rigidbody2D rb;
 
@@ -22,11 +23,13 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer) return;
 
 		if (Input.GetKeyDown(KeyCode.Backspace)) {
-				GetComponent<Player>().TakeDamage(10);
+			GetComponent<Player>().TakeDamage(10);
 		}
 
-		if (Input.GetButtonDown("Jump") && IsGrounded()) {
+		if (Input.GetButtonDown("Jump") && isGrounded) {
 			rb.velocity = Vector2.up * jumpHeight;
+
+			isGrounded = false;
 		}
 
 		// Model flipping
@@ -48,18 +51,16 @@ public class PlayerController : NetworkBehaviour {
 			rb.velocity = new Vector2(speed, rb.velocity.y);
 		}
 
-		if (rb.position.y < -100) {
-			rb.position = GameObject.Find("Spawnpoint").transform.position;
+		if (rb.position.y < -50) {
+			GetComponent<Player>().SetHealth(0);
 		}
     }
 
-	bool IsGrounded() {
-		Collider2D col = GetComponent<BoxCollider2D>();
-
-		return Physics2D.OverlapArea(col.bounds.min, col.bounds.max, groundLayer);
-	}
-
 	void OnCollisionEnter2D(Collision2D col) {
+		if (col.transform.tag == "Ground") {
+			isGrounded = true;
+		}
+
 		if (col.transform.tag == "Ship") {
 			transform.parent = col.transform;
 		}
