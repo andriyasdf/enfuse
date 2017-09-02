@@ -41,7 +41,6 @@ public class Pickup : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Player") {
-			Debug.Log("collision with player");
 			Physics2D.IgnoreCollision(col.collider, pickupCol);
 			PickupItem(col.gameObject);
 		}
