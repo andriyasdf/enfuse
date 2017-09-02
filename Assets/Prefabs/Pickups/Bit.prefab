@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractRadius: 8
-  attractFactor: 0.8
+  attractFactor: 1.1
   value: 1
 --- !u!114 &114312762245578586
 MonoBehaviour:
