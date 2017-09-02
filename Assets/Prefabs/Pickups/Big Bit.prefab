@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba0e45965349924c8b3428e4fe2d8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRadius: 6
-  attractFactor: 1.8
+  attractRadius: 8
+  attractFactor: 0.8
   value: 8
 --- !u!114 &114798865907252930
 MonoBehaviour:

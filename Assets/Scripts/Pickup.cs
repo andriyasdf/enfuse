@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour {
 
-	public float pickupRadius = 10.0f;
-	public float attractFactor = 0.9f;
+	public float attractRadius = 8.0f;
+	public float attractFactor = 0.8f;
 
 	Rigidbody2D rb;
 	Collider2D pickupCol;
@@ -18,28 +18,32 @@ public class Pickup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius, 1 << LayerMask.NameToLayer("Player"));
+		Collider2D[] players = Physics2D.OverlapCircleAll(transform.position, attractRadius, 1 << LayerMask.NameToLayer("Player"));
 
-		if (colliders.Length == 0) return;
-		Collider2D closestPlayer = colliders[0];
+		if (players.Length == 0) return;
+		Collider2D closestPlayer = players[0];
 
 		// Find the nearest player within pickup radius
-		foreach (Collider2D col in colliders) {
+		foreach (Collider2D col in players) {
 			if (col.Distance(pickupCol).distance > closestPlayer.Distance(pickupCol).distance) {
 				closestPlayer = col;
 			}
 		}
 
-		// Float pickup to nearest player
+		// Float pickup towards nearest player
 		Vector2 dist = closestPlayer.GetComponent<Rigidbody2D>().position - rb.position;
 		rb.AddForce(dist * attractFactor);
-
-		if (dist.magnitude < 1.0f) {
-			PickupItem(closestPlayer.gameObject);
-		}
 	}
 
 	public virtual void PickupItem(GameObject ply) {
 		Destroy(gameObject);
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.tag == "Player") {
+			Debug.Log("collision with player");
+			Physics2D.IgnoreCollision(col.collider, pickupCol);
+			PickupItem(col.gameObject);
+		}
 	}
 }

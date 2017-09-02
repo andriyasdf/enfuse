@@ -13,6 +13,7 @@ public class Buoyancy : MonoBehaviour {
 
 	void Start() {
 		if (!GetComponent<Rigidbody2D>()) {
+			Debug.LogWarning("No rigidbody found on buoyancy object, adding one now...");
 			gameObject.AddComponent<Rigidbody2D>();
 		}
 
