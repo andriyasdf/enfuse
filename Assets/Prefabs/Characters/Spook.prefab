@@ -216,8 +216,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a9bf48d0b09b4787518801fd22735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buoyancy: 5
+  buoyancy: 15
   viscosity: 0.9
+  advancedMode: 0
+  inWater: 0
+  rb: {fileID: 0}
+  vertices: []
+  centroid: {x: 0, y: 0}
 --- !u!114 &114158022892470616
 MonoBehaviour:
   m_ObjectHideFlags: 1
